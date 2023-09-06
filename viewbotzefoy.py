@@ -1,6 +1,292 @@
-import base64
-encoded = base64.b64encode(b'ZnJvbSBvcyBpbXBvcnQgc3lzdGVtLCBuYW1lIGFzIG9zX25hbWUsIGdldF90ZXJtaW5hbF9zaXplCmZyb20gcmUgaW1wb3J0IGZpbmRhbGwKZnJvbSByZXF1ZXN0cyBpbXBvcnQgcG9zdCwgZ2V0CmZyb20gcmFuZG9tIGltcG9ydCBjaG9pY2UKZnJvbSBpbyBpbXBvcnQgQnl0ZXNJTwpmcm9tIGVuY2hhbnQgaW1wb3J0IERpY3QKZnJvbSBiYXNlNjQgaW1wb3J0IGI2NGRlY29kZSwgYjY0ZW5jb2RlCmZyb20gdGltZSBpbXBvcnQgc2xlZXAKZnJvbSBjdHlwZXMgaW1wb3J0IHdpbmRsbApmcm9tIHNlbGVuaXVtLndlYmRyaXZlci5jb21tb24uYnkgaW1wb3J0IEJ5CmZyb20gc2VsZW5pdW0ud2ViZHJpdmVyLnJlbW90ZS53ZWJlbGVtZW50IGltcG9ydCBXZWJFbGVtZW50CmZyb20gdW5kZXRlY3RlZF9jaHJvbWVkcml2ZXIgaW1wb3J0IENocm9tZU9wdGlvbnMsIENocm9tZQpmcm9tIFBJTCBpbXBvcnQgSW1hZ2VHcmFiLCBJbWFnZQpmcm9tIHRocmVhZGluZyBpbXBvcnQgVGhyZWFkCgoKCmNsYXNzIFplZm95OgogICAgZGVmIF9faW5pdF9fKHNlbGYpIC0+IE5vbmU6CiAgICAgICAgc2VsZi5jYXB0Y2hhX2JveCA9ICcvaHRtbC9ib2R5L2Rpdls1XS9kaXZbMl0vZm9ybS9kaXYvZGl2JwogICAgICAgIHNlbGYuY2FwdGNoYV9yZXMgPSAnL2h0bWwvYm9keS9kaXZbNV0vZGl2WzJdL2Zvcm0vZGl2L2Rpdi9kaXYvaW5wdXQnCiAgICAgICAgc2VsZi5jYXB0Y2hhX2J1dHRvbiA9ICcvaHRtbC9ib2R5L2Rpdls1XS9kaXZbMl0vZm9ybS9kaXYvZGl2L2Rpdi9kaXYvYnV0dG9uJwogICAgICAgIHNlbGYudmlkZW9fdXJsX2JveCA9ICcvaHRtbC9ib2R5L2RpdlstXS9kaXYvZm9ybS9kaXYvaW5wdXQnCiAgICAgICAgc2VsZi5zZWFyY2hfYm94ICAgID0gJy9odG1sL2JvZHkvZGl2Wy1dL2Rpdi9mb3JtL2Rpdi9kaXYvYnV0dG9uJwogICAgICAgIHNlbGYuc2VudCA9IDAKCiAgICAgICAgc2VsZi5wYXRocyA9IHsKICAgICAgICAgICAgMSA6ICgnL2h0bWwvYm9keS9kaXZbNl0vZGl2L2RpdlsyXS9kaXYvZGl2L2RpdlsyXS9kaXYvYnV0dG9uJywgJ2MyVnVaRjltYjJ4c2IzZGxjbk5mZEdscmRHOXInKSwKICAgICAgICAgICAgMiA6ICgnL2h0bWwvYm9keS9kaXZbNl0vZGl2L2RpdlsyXS9kaXYvZGl2L2RpdlszXS9kaXYvYnV0dG9uJywgJ2MyVnVaRTluYjJ4c2IzZGxjbk5mZEdscmRHOXInKSwKICAgICAgICAgICAgMyA6ICgnL2h0bWwvYm9keS9kaXZbNl0vZGl2L2RpdlsyXS9kaXYvZGl2L2Rpdls0XS9kaXYvYnV0dG9uJywgJ2MyVnVaQzltYjJ4c2IzZGxjbk5mZEdscmRHOXInKSwKICAgICAgICAgICAgNCA6ICgnL2h0bWwvYm9keS9kaXZbNl0vZGl2L2RpdlsyXS9kaXYvZGl2L2Rpdls1XS9kaXYvYnV0dG9uJywgJ2MyVnVaQzltYjJ4ZWIzZGxjbk5mZEdscmRHOVYnKSwKICAgICAgICAgICAgNSA6ICgnL2h0bWwvYm9keS9kaXZbNl0vZGl2L2RpdlsyXS9kaXYvZGl2L2Rpdls2XS9kaXYvYnV0dG9uJywgJ2MyVnVaQzltYjJ4c2IzZGxjbk5mZEdscmRHOXMnKSwKICAgICAgICAgICAgNiA6ICgnL2h0bWwvYm9keS9kaXZbNl0vZGl2L2RpdlsyXS9kaXYvZGl2L2Rpdls3XS9kaXYvYnV0dG9uJywgJ2MyVnVaRjltYjJ4c2IzZGxjbk5mZEdscmRHOUwnKQogICAgICAgIH0KCiAgICAgICAgc2VsZi5iYW5uZXIgPSAiIiIKCgogX19fX19fXyAgX19fX19fXyAgX19fX19fXyAgX19fX19fXyAgICAgICAgICAKLyBfX18gICApKCAgX19fXyBcKCAgX19fXyBcKCAgX19fICApfFwgICAgIC98ClwvICAgKSAgfHwgKCAgICBcL3wgKCAgICBcL3wgKCAgICkgfCggXCAgIC8gKQogICAgLyAgICl8IChfXyAgICB8IChfXyAgICB8IHwgICB8IHwgXCAoXykgLyAKICAgLyAgIC8gfCAgX18pICAgfCAgX18pICAgfCB8ICAgfCB8ICBcICAgLyAgCiAgLyAgIC8gIHwgKCAgICAgIHwgKCAgICAgIHwgfCAgIHwgfCAgICkgKCAgIAogLyAgIChfL1x8IChfX19fL1x8ICkgICAgICB8IChfX18pIHwgICB8IHwgICAKKF9fX19fX18vKF9fX19fX18vfC8gICAgICAgKF9fX19fX18pICAgXF8vICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAoKZ2l0aHViOiB6OGxjCiIiIiAgIAoKICAgIGRlZiBjbGVhcihzZWxmKSAtPiBpbnQ6CiAgICAgICAgcmV0dXJuIHN5c3RlbSgnY2xzJyBpZiBvc19uYW1lID09ICdudCcgZWxzZSAnY2xlYXInKQogICAgCiAgICBkZWYgdGl0bGUoc2VsZiwgY29udGVudDogc3RyKSAtPiBpbnQ6CiAgICAgICAgcmV0dXJuIHN5c3RlbShmJ3RpdGxlIHtjb250ZW50fScpIGlmIG9zX25hbWUgPT0gJ250JyBlbHNlIHdpbmRsbC5rZXJuZWwzMi5TZXRDb25zb2xlVGl0bGVXKGNvbnRlbnQpCiAgICAKICAgIGRlZiBfcHJpbnQoc2VsZiwgdGhpbmc6IHN0ciBvciBpbnQsIGNvbnRlbnQ6IHN0ciBvciBpbnQsIG5ld19saW5lOiBib29sID0gVHJ1ZSwgaW5wdXQ6IGJvb2wgPSBGYWxzZSkgLT4gTm9uZSBvciBzdHI6CgogICAgICAgIHByaW50KCdcMDMzWz8yNWwnLCBlbmQ9JycpCgogICAgICAgIHNpemUgPSBnZXRfdGVybWluYWxfc2l6ZSgpLmNvbHVtbnMgLSAxMAogICAgICAgIGNvbCA9ICJcMDMzWzM4OzI7MDstOzI1NW0iCiAgICAgICAgZmlyc3RfcGFydCA9IGYiW3t0aGluZ31dIHwge2NvbnRlbnR9IgogICAgICAgIG5ld19wYXJ0ID0gIiIKICAgICAgICAKICAgICAgICBjb3VudGVyID0gMAogICAgICAgIGZvciBjYXJhY3RlciBpbiBmaXJzdF9wYXJ0OgogICAgICAgICAgICBuZXdfcGFydCArPSBjb2wucmVwbGFjZSgnLScsIHN0cigyMjUgLSBjb3VudGVyICogaW50KDI1NS9sZW4oZmlyc3RfcGFydCkpKSkgKyBjYXJhY3RlcgogICAgICAgICAgICBjb3VudGVyICs9IDEgCiAgICAgICAgICAgIAogICAgICAgIGlmIGlucHV0OgogICAgICAgICAgICByZXR1cm4gZiJ7bmV3X3BhcnR9IgogICAgICAgICAgICAKICAgICAgICBpZiBub3QgbmV3X2xpbmU6CiAgICAgICAgICAgIHByaW50KGYie25ld19wYXJ0fXsnICcqKHNpemUgLSBsZW4oZmlyc3RfcGFydCkpfVwwMzNbMzg7MjsyNTU7MjU1OzI1NW0iLCBlbmQ9IlxyIikKCiAgICAgICAgZWxzZToKICAgICAgICAgICAgcHJpbnQoZiJ7bmV3X3BhcnR9eycgJyooc2l6ZSAtIGxlbihmaXJzdF9wYXJ0KSl9XDAzM1szODsyOzI1NTsyNTU7MjU1bSIpCiAgICAKICAgIGRlZiBkaXNwbGF5X2Jhbm5lcihzZWxmKSAtPiBzdHI6CiAgICAgICAgCiAgICAgICAgZmlyc3RfY29sb3IsIHNlY29uZF9jb2xvciA9ICdcMDMzWzM4OzI7MTcwOzE4MDsyNTVtJywgJ1wwMzNbMzg7MjsyNTU7MjU1OzI1NW0nCgogICAgICAgIGJhbm5lciA9ICIiCiAgICAgICAgZGlzcGxheV9iYW5uZXIgPSAiIgoKICAgICAgICBmb3IgbGluZSBpbiBzZWxmLmJhbm5lci5zcGxpdGxpbmVzKCk6CiAgICAgICAgICAgIGRpc3BsYXlfYmFubmVyICs9ICIgIiAqIChpbnQoKGdldF90ZXJtaW5hbF9zaXplKCkuY29sdW1ucyAtIGxlbihsaW5lKSkgLyAyKSkgKyBsaW5lICsgIlxuIgoKICAgICAgICBmb3IgY2FyYWN0ZXIgaW4gZGlzcGxheV9iYW5uZXI6CiAgICAgICAgICAgIGlmIGNhcmFjdGVyIGluIFsn4pWaJywgJ+KVkCcsICfilZ0nLCAn4pWUJywgJ+KVkScsICfilZcnXToKICAgICAgICAgICAgICAgIGJhbm5lciArPSBzZWNvbmRfY29sb3IgKyBjYXJhY3RlcgogICAgICAgICAgICAKICAgICAgICAgICAgZWxpZiBjYXJhY3RlciBpbiAnICc6CiAgICAgICAgICAgICAgICBiYW5uZXIgKz0gY2FyYWN0ZXIKICAgICAgICAgICAgCiAgICAgICAgICAgIGVsc2U6CiAgICAgICAgICAgICAgICBiYW5uZXIgKz0gZmlyc3RfY29sb3IgKyBjYXJhY3RlcgoKICAgICAgICByZXR1cm4gYmFubmVyCgogICAgZGVmIHNldHVwX2RyaXZlcihzZWxmKSAtPiBDaHJvbWU6CiAgICAgICAgcmV0dXJuIENocm9tZSgpCiAgICAKICAgIGRlZiBjb252ZXJ0KHNlbGYsIG1pbnV0ZXM6IGludCwgc2Vjb25kczogaW50KSAtPiBpbnQ6CiAgICAgICAgcmV0dXJuIG1pbnV0ZXMgKiA2MCArIHNlY29uZHMgKyAzCiAgICAKICAgIGRlZiBnZXRfc3RhdHMoc2VsZiwgdmlkZW9faWQ6IHN0cikgLT4gbGlzdDoKICAgICAgICByZXMgPSBnZXQoZidodHRwczovL3Rpa3N0YXRzLmlvL3ZpZGVvL3t2aWRlb19pZH0nKS50ZXh0CiAgICAgICAgcmV0dXJuIGZpbmRhbGwocidcZCsnLCBmaW5kYWxsKHInLmlubmVyVGV4dD0oLiopLCAxJyAsIHJlcylbMF0pCiAgICAKICAgIGRlZiBkaXNwbGF5X3N0YXRzKHNlbGYsIHZpZGVvX2lkOiBzdHIpIC0+IE5vbmU6CgogICAgICAgIHByaW50KHNlbGYuZGlzcGxheV9iYW5uZXIoKSkKCiAgICAgICAgd2hpbGUgVHJ1ZToKICAgICAgICAgICAgdHJ5OgogICAgICAgICAgICAgICAgc2xlZXAoMSkKICAgICAgICAgICAgICAgIHZpZXdzLCBzaGFyZXMsIGxpa2VzLCBjb21tZW50cywgc2F2ZXMgPSBzZWxmLmdldF9zdGF0cyh2aWRlb19pZCkKICAgICAgICAgICAgICAgIHNlbGYuX3ByaW50KCfinpUnLCBmJ1N0YXRzOiBbVmlld3M6IHt2aWV3c30gfCBTaGFyZXM6IHtzaGFyZXN9IHwgTGlrZXM6IHtsaWtlc30gfCBDb21tZW50czoge2NvbW1lbnRzfSB8IFNhdmVzOiB7c2F2ZXN9XScsIG5ld19saW5lPUZhbHNlKQogICAgICAgICAgICBleGNlcHQ6IGNvbnRpbnVlCgogICAgZGVmIGdldF9pZChzZWxmLCB2aWRlb191cmw6IHN0cikgLT4gc3RyOgogICAgICAgIHJldHVybiB2aWRlb191cmwuc3BsaXQoJz8nKVswXS5zcGxpdCgnLycpWy0xXQoKICAgIGRlZiB3YWl0X2Zvcl9wYXRoKHNlbGYsIHhwYXRoOiBzdHIpIC0+IFdlYkVsZW1lbnQ6CiAgICAgICAgd2hpbGUgVHJ1ZToKICAgICAgICAgICAgdHJ5OiByZXR1cm4gc2VsZi5kcml2ZXIuZmluZF9lbGVtZW50KEJ5LlhQQVRILCB4cGF0aCkKICAgICAgICAgICAgZXhjZXB0OiBjb250aW51ZQoKICAgIGRlZiBsb2FkX3plZm95KHNlbGYpIC0+IE5vbmU6CiAgICAgICAgc2VsZi5kcml2ZXIgPSBzZWxmLnNldHVwX2RyaXZlcigpCiAgICAgICAgc2VsZi5kcml2ZXIuc2V0X3dpbmRvd19zaXplKDYwMCwgOTAwKQogICAgICAgIHNsZWVwKDIpCgogICAgICAgIHNlbGYuZHJpdmVyLmV4ZWN1dGVfc2NyaXB0KCd3aW5kb3cub3BlbigiaHR0cHM6Ly96ZWZveS5jb20iKTsnKQogICAgICAgICNzZWxmLmRyaXZlci5nZXQoJ2h0dHBzOi8vemVmb3kuY29tJykKICAgICAgICAKICAgICAgICByZXMgPSAnJwoKICAgICAgICB3aGlsZSBub3QgJ0VudGVyIHRoZSB3b3JkJyBpbiByZXM6CiAgICAgICAgICAgIHdpdGggQnl0ZXNJTygpIGFzIGJ5dGVzX2FycmF5OgogICAgICAgICAgICAgICAgSW1hZ2VHcmFiLmdyYWIoKS5zYXZlKGJ5dGVzX2FycmF5LCBmb3JtYXQ9J1BORycpCiAgICAgICAgICAgICAgICByZXMgPSBwb3N0KCdodHRwczovL3BsYXRpcHVzOTk5OS5weXRob25hbnl3aGVyZS5jb20nLCBqc29uPXsnaW1hZ2UnOiBiNjRlbmNvZGUoYnl0ZXNfYXJyYXkuZ2V0dmFsdWUoKSkuZGVjb2RlKCl9KS50ZXh0CgoKICAgICAgICBzZWxmLmRyaXZlci5jbG9zZSgpCiAgICAgICAgc2VsZi5kcml2ZXIuc3dpdGNoX3RvLndpbmRvdyhzZWxmLmRyaXZlci53aW5kb3dfaGFuZGxlc1swXSkKICAgIAogICAgZGVmIHNvbHZlKHNlbGYpIC0+IE5vbmU6CiAgICAgICAgaW1hZ2VfeHBhdGggPSBzZWxmLmNhcHRjaGFfYm94ICsgJy9pbWcnCgogICAgICAgIGZhaWxlZCA9IEZhbHNlCgogICAgICAgIHdoaWxlIFRydWU6CiAgICAgICAgICAgIGlmIGZhaWxlZDoKICAgICAgICAgICAgICAgIGltYWdlX3hwYXRoLCBzZWxmLmNhcHRjaGFfcmVzLCBzZWxmLmNhcHRjaGFfYnV0dG9uID0gZiJ7aW1hZ2VfeHBhdGh9OntzZWxmLmNhcHRjaGFfcmVzfTp7c2VsZi5jYXB0Y2hhX2J1dHRvbn0iLnJlcGxhY2UoJzUnLCAnNicpLnNwbGl0KCc6JykKCiAgICAgICAgICAgIGltZyA9IHNlbGYud2FpdF9mb3JfcGF0aChpbWFnZV94cGF0aCkuc2NyZWVuc2hvdF9hc19iYXNlNjQKCiAgICAgICAgICAgIGNhcHRjaGFfYW5zd2VyID0gcG9zdCgnaHR0cHM6Ly9wbGF0aXB1czk5OTkucHl0aG9uYW55d2hlcmUuY29tJywganNvbj17J2ltYWdlJzogaW1nfSkudGV4dC5zcGxpdCgnXG4nKVswXQoKICAgICAgICAgICAgc2VsZi5fcHJpbnQoJyEnLCBmJ3tjYXB0Y2hhX2Fuc3dlcn0nKQoKICAgICAgICAgICAgdHJ5OgogICAgICAgICAgICAgICAgaWYgbm90IERpY3QoImVuX1VTIikuY2hlY2soY2FwdGNoYV9hbnN3ZXIpOgogICAgICAgICAgICAgICAgICAgIGNhcHRjaGFfYW5zd2VyID0gRGljdCgiZW5fVVMiKS5zdWdnZXN0KGNhcHRjaGFfYW5zd2VyKVswXQogICAgICAgICAgICAgICAgICAgIHNlbGYuX3ByaW50KCchJywgZidUcnlpbmcge2NhcHRjaGFfYW5zd2VyfScpCiAgICAgICAgICAgIGV4Y2VwdDogcGFzcwoKICAgICAgICAgICAgc2VsZi5kcml2ZXIuZmluZF9lbGVtZW50KEJ5LlhQQVRILCBzZWxmLmNhcHRjaGFfcmVzKS5zZW5kX2tleXMoY2FwdGNoYV9hbnN3ZXIpCiAgICAgICAgICAgIHNlbGYuZHJpdmVyLmZpbmRfZWxlbWVudChCeS5YUEFUSCwgc2VsZi5jYXB0Y2hhX2J1dHRvbikuY2xpY2soKQoKICAgICAgICAgICAgdHJ5OgogICAgICAgICAgICAgICAgc2xlZXAoMSkKICAgICAgICAgICAgICAgIHNlbGYuZHJpdmVyLmZpbmRfZWxlbWVudChCeS5YUEFUSCwgc2VsZi5wYXRoc1s0XVswXSkKICAgICAgICAgICAgICAgIGJyZWFrCgogICAgICAgICAgICBleGNlcHQ6CiAgICAgICAgICAgICAgICBzZWxmLndhaXRfZm9yX3BhdGgoJy8vKltAaWQ9ImVycm9yY2FwdGhjYWNsb3NlIl0vZGl2L2Rpdi9kaXZbM10vYnV0dG9uJykuY2xpY2soKQogICAgICAgICAgICAgICAgZmFpbGVkID0gVHJ1ZQoKICAgIGRlZiBjaG9pY2Vfc2VydmljZShzZWxmKSAtPiBOb25lOgoKICAgICAgICBkaXNwbGF5X2RpY3QgPSB7CiAgICAgICAgICAgIFRydWUgIDogJ+KchScsCiAgICAgICAgICAgIEZhbHNlIDogJ+KdjCcKICAgICAgICB9CgogICAgICAgIHByaW50KHNlbGYuZGlzcGxheV9iYW5uZXIoKSkKCiAgICAgICAgZm9yIG51bWJlciwgeHBhdGggaW4gc2VsZi5wYXRocy5pdGVtcygpOgogICAgICAgICAgICBpc19lbmFibGVkID0gc2VsZi5kcml2ZXIuZmluZF9lbGVtZW50KEJ5LlhQQVRILCB4cGF0aFswXSkuaXNfZW5hYmxlZCgpCiAgICAgICAgICAgIG5hbWUgICA9IHNlbGYuZHJpdmVyLmZpbmRfZWxlbWVudChCeS5YUEFUSCwgeHBhdGhbMF0ucmVwbGFjZSgnYnV0dG9uJywgJ2g1JykpLnRleHQKICAgICAgICAgICAgCiAgICAgICAgICAgIHNlbGYuX3ByaW50KG51bWJlciwgZid7bmFtZX17IiAiICogKGxlbigiQ29tbWVudHMgSGVhcnRzICIpIC0gbGVuKG5hbWUpKX0gfCBTdGF0dXM6IHtkaXNwbGF5X2RpY3RbaXNfZW5hYmxlZF19JykKCiAgICAgICAgcHJpbnQoKQogICAgICAgIHNlbGYuY2hvaWNlID0gaW50KGlucHV0KHNlbGYuX3ByaW50KCc/JywgJ0Nob2ljZSBhIHNlcnZpY2UgPiAnLCBpbnB1dD1UcnVlKSkpCgogICAgZGVmIHdhaXQoc2VsZiwgc2Vjb25kczogaW50KSAtPiBOb25lOgogICAgICAgIGZvciBzZWNvbmQgaW4gcmFuZ2Uoc2Vjb25kcyk6CiAgICAgICAgICAgIHNlbGYudGl0bGUoZidaZWZveS1ib3QgejhsYyDilo8gIFNlbnQ6IHtzZWxmLnNlbnR9IOKWjyAgQ29vbGRvd246IHtzZWNvbmRzIC0gKHNlY29uZCArIDEpfScpCiAgICAgICAgICAgIHNsZWVwKDEpCgogICAgZGVmIHRhc2soc2VsZikgLT4gTm9uZToKICAgICAgICBzZWxmLmRyaXZlci5maW5kX2VsZW1lbnQoQnkuWFBBVEgsIHNlbGYuc2VhcmNoX2JveC5yZXBsYWNlKCctJywgZid7c2VsZi5kaXZ9JykpLmNsaWNrKCkKICAgICAgICBzbGVlcCgzKQogICAgICAgICAgICAKICAgICAgICBzZWNvbmRzID0gc2VsZi5jaGVja19zdWJtaXQoKQogICAgICAgIGlmIHR5cGUoc2Vjb25kcykgPT0gaW50OgogICAgICAgICAgICBzZWxmLndhaXQoc2Vjb25kcykKICAgICAgICAgICAgc2xlZXAoMikKICAgICAgICAgICAgc2VsZi5kcml2ZXIuZmluZF9lbGVtZW50KEJ5LlhQQVRILCBzZWxmLnNlYXJjaF9ib3gucmVwbGFjZSgnLScsIGYne3NlbGYuZGl2fScpKQogICAgICAgICAgICAKICAgICAgICBzbGVlcCgyKQoKICAgICAgICB3aGlsZSBUcnVlOgogICAgICAgICAgICB0cnk6CiAgICAgICAgICAgICAgICBzZWxmLmRyaXZlci5leGVjdXRlX3NjcmlwdCgiZnVuY3Rpb24gZmluZF9lbGVtZW50KHBhdGgpIHtyZXR1cm4gZG9jdW1lbnQuZXZhbHVhdGUocGF0aCwgZG9jdW1lbnQsIG51bGwsIFhQYXRoUmVzdWx0LkZJUlNUX09SREVSRURfTk9ERV9UWVBFLCBudWxsKS5zaW5nbGVOb2RlVmFsdWU7IH0gZmluZF9lbGVtZW50KCciICsgZicvLypbQGlkPSJ7c2VsZi5wYXRoc1tzZWxmLmNob2ljZV1bMV19Il0vZGl2WzFdL2Rpdi9mb3JtL2J1dHRvbicgKyAiJykuY2xpY2soKTsiKQogICAgICAgICAgICAgICAgYnJlYWsKICAgICAgICAgICAgZXhjZXB0OgogICAgICAgICAgICAgICAgc2VsZi5kcml2ZXIuZmluZF9lbGVtZW50KEJ5LlhQQVRILCBzZWxmLnNlYXJjaF9ib3gucmVwbGFjZSgnLScsIGYne3NlbGYuZGl2fScpKS5jbGljaygpCgogICAgICAgICAgICBzbGVlcCgyKQoKCiAgICAgICAgd2hpbGUgVHJ1ZToKICAgICAgICAgICAgc291cmNlID0gc2VsZi5kcml2ZXIucGFnZV9zb3VyY2UKCiAgICAgICAgICAgIGlmICdzZW50JyBpbiBzb3VyY2U6CiAgICAgICAgICAgICAgICBzZWxmLnNlbnQgKz0gMQogICAgICAgICAgICAgICAgc2VsZi50aXRsZShmJ1plZm95IEJvdCB6OGxjIOKWjyAgU2VudDoge3NlbGYuc2VudH0g4paPICBDb29sZG93bjogMCcpCiAgICAgICAgICAgICAgICBicmVhawogICAgICAgICAgICAKICAgICAgICAgICAgaWYgJ1RvbyBtYW55IHJlcXVlc3RzJyBpbiBzb3VyY2U6CiAgICAgICAgICAgICAgICBzbGVlcCgzKQogICAgICAgICAgICAgICAgYnJlYWsKICAgICAgICAgICAgCgoKICAgIGRlZiBjaGVja19zdWJtaXQoc2VsZik6CiAgICAgICAgdHJ5OgogICAgICAgICAgICB0aW1lcl9yZXNwb25zZSA9IHNlbGYuZHJpdmVyLmZpbmRfZWxlbWVudChCeS5YUEFUSCwgZicvLypbQGlkPSJ7c2VsZi5wYXRoc1tzZWxmLmNob2ljZV1bMV19Il0vc3BhbicpLnRleHQKCiAgICAgICAgICAgIGlmICdSRUFEWScgaW4gIHRpbWVyX3Jlc3BvbnNlOgogICAgICAgICAgICAgICAgcmV0dXJuIFRydWUKICAgICAgICAgICAgCiAgICAgICAgICAgIGVsaWYgInNlY29uZHMgZm9yIHlvdXIgbmV4dCBzdWJtaXQiIGluICB0aW1lcl9yZXNwb25zZToKICAgICAgICAgICAgICAgIG1pbnV0ZXMsIHNlY29uZHMgPSBmaW5kYWxsKHInXGQrJywgIHRpbWVyX3Jlc3BvbnNlKQogICAgICAgICAgICAgICAgcmV0dXJuIHNlbGYuY29udmVydChpbnQobWludXRlcyksIGludChzZWNvbmRzKSkKCiAgICAgICAgZXhjZXB0OgogICAgICAgICAgICByZXR1cm4gRmFsc2UKICAgICAgICAgICAgCiAgICBkZWYgbWFpbihzZWxmKSAtPiBOb25lOgogICAgICAgIHNlbGYuY2xlYXIoKQogICAgICAgIHByaW50KHNlbGYuZGlzcGxheV9iYW5uZXIoKSkKICAgICAgICBzZWxmLnRpdGxlKCdaZWZveSBCb3QgejhsYyDilo8gIFN0YXR1czogTG9hZGluZycpCgogICAgICAgIHZpZGVvX3VybCA9IGlucHV0KHNlbGYuX3ByaW50KCc/JywgJ1ZpZGVvIFVybCA+ICcsIGlucHV0PVRydWUpKQogICAgICAgIHZpZGVvX2lkID0gc2VsZi5nZXRfaWQodmlkZW9fdXJsKQoKICAgICAgICBzZWxmLl9wcmludCgnIScsICdCcm93c2VyIGlzIGxvYWRpbmdcbicpCiAgICAgICAgc2VsZi5sb2FkX3plZm95KCkKICAgICAgICBzZWxmLndhaXRfZm9yX3BhdGgoc2VsZi5jYXB0Y2hhX2JveCkKCiAgICAgICAgc2VsZi50aXRsZSgnWmVmb3kgQm90IHo4bGMg4paPICBTdGF0dXM6IFNvbHZpbmcnKQogICAgICAgIHNlbGYuX3ByaW50KCcqJywgJ1NvbHZpbmcgVGhlIENhcHRjaGEnKQogICAgICAgIHNlbGYuc29sdmUoKQogICAgICAgIAogICAgICAgIHNlbGYuY2xlYXIoKQogICAgICAgIHNlbGYudGl0bGUoJ1plZm95IEJvdCB6OGxjIOKWjyAgU3RhdHVzOiBOL0EnKQoKICAgICAgICBzZWxmLmNob2ljZV9zZXJ2aWNlKCkKCiAgICAgICAgc2VsZi5kcml2ZXIuZmluZF9lbGVtZW50KEJ5LlhQQVRILCBzZWxmLnBhdGhzW3NlbGYuY2hvaWNlXVswXSkuY2xpY2soKQoKICAgICAgICBzZWxmLmRpdiA9IGludChmaW5kYWxsKHInXGQrJywgc2VsZi5wYXRoc1tzZWxmLmNob2ljZV1bMF0pWy0xXSkgKyA1CgogICAgICAgIHNlbGYuY2xlYXIoKQogICAgICAgIFRocmVhZCh0YXJnZXQgPSBzZWxmLmRpc3BsYXlfc3RhdHMsIGFyZ3MgPSBbdmlkZW9faWQsXSkuc3RhcnQoKQoKICAgICAgICBzZWxmLmRyaXZlci5maW5kX2VsZW1lbnQoQnkuWFBBVEgsIHNlbGYudmlkZW9fdXJsX2JveC5yZXBsYWNlKCctJywgZid7c2VsZi5kaXZ9JykpLnNlbmRfa2V5cyh2aWRlb191cmwpCgogICAgICAgIHdoaWxlIFRydWU6CiAgICAgICAgICAgIHNlbGYudGFzaygpCiAgICAgICAgCgppZiBfX25hbWVfXyA9PSAnX19tYWluX18nOgogICAgWmVmb3koKS5tYWluKCk=')
-encoded
+from os import system, name as os_name, get_terminal_size
+from re import findall
+from requests import post, get
+from random import choice
+from io import BytesIO
+from enchant import Dict
+from base64 import b64decode, b64encode
+from time import sleep
+from ctypes import windll
+from selenium.webdriver.common.by import By
+from selenium.webdriver.remote.webelement import WebElement
+from undetected_chromedriver import ChromeOptions, Chrome
+from PIL import ImageGrab, Image
+from threading import Thread
 
-data = base64.b64decode(encoded)
-data
+
+
+class Zefoy:
+    def __init__(self) -> None:
+        self.captcha_box = '/html/body/div[5]/div[2]/form/div/div'
+        self.captcha_res = '/html/body/div[5]/div[2]/form/div/div/div/input'
+        self.captcha_button = '/html/body/div[5]/div[2]/form/div/div/div/div/button'
+        self.video_url_box = '/html/body/div[-]/div/form/div/input'
+        self.search_box    = '/html/body/div[-]/div/form/div/div/button'
+        self.sent = 0
+
+        self.paths = {
+            1 : ('/html/body/div[6]/div/div[2]/div/div/div[2]/div/button', 'c2VuZF9mb2xsb3dlcnNfdGlrdG9r'),
+            2 : ('/html/body/div[6]/div/div[2]/div/div/div[3]/div/button', 'c2VuZE9nb2xsb3dlcnNfdGlrdG9r'),
+            3 : ('/html/body/div[6]/div/div[2]/div/div/div[4]/div/button', 'c2VuZC9mb2xsb3dlcnNfdGlrdG9r'),
+            4 : ('/html/body/div[6]/div/div[2]/div/div/div[5]/div/button', 'c2VuZC9mb2xeb3dlcnNfdGlrdG9V'),
+            5 : ('/html/body/div[6]/div/div[2]/div/div/div[6]/div/button', 'c2VuZC9mb2xsb3dlcnNfdGlrdG9s'),
+            6 : ('/html/body/div[6]/div/div[2]/div/div/div[7]/div/button', 'c2VuZF9mb2xsb3dlcnNfdGlrdG9L')
+        }
+
+        self.banner = """
+
+
+ _______  _______  _______  _______          
+/ ___   )(  ____ \(  ____ \(  ___  )|\     /|
+\/   )  || (    \/| (    \/| (   ) |( \   / )
+    /   )| (__    | (__    | |   | | \ (_) / 
+   /   / |  __)   |  __)   | |   | |  \   /  
+  /   /  | (      | (      | |   | |   ) (   
+ /   (_/\| (____/\| )      | (___) |   | |   
+(_______/(_______/|/       (_______)   \_/   
+                                             
+
+github: z8lc
+"""   
+
+    def clear(self) -> int:
+        return system('cls' if os_name == 'nt' else 'clear')
+    
+    def title(self, content: str) -> int:
+        return system(f'title {content}') if os_name == 'nt' else windll.kernel32.SetConsoleTitleW(content)
+    
+    def _print(self, thing: str or int, content: str or int, new_line: bool = True, input: bool = False) -> None or str:
+
+        print('\033[?25l', end='')
+
+        size = get_terminal_size().columns - 10
+        col = "\033[38;2;0;-;255m"
+        first_part = f"[{thing}] | {content}"
+        new_part = ""
+        
+        counter = 0
+        for caracter in first_part:
+            new_part += col.replace('-', str(225 - counter * int(255/len(first_part)))) + caracter
+            counter += 1 
+            
+        if input:
+            return f"{new_part}"
+            
+        if not new_line:
+            print(f"{new_part}{' '*(size - len(first_part))}\033[38;2;255;255;255m", end="\r")
+
+        else:
+            print(f"{new_part}{' '*(size - len(first_part))}\033[38;2;255;255;255m")
+    
+    def display_banner(self) -> str:
+        
+        first_color, second_color = '\033[38;2;170;180;255m', '\033[38;2;255;255;255m'
+
+        banner = ""
+        display_banner = ""
+
+        for line in self.banner.splitlines():
+            display_banner += " " * (int((get_terminal_size().columns - len(line)) / 2)) + line + "\n"
+
+        for caracter in display_banner:
+            if caracter in ['╚', '═', '╝', '╔', '║', '╗']:
+                banner += second_color + caracter
+            
+            elif caracter in ' ':
+                banner += caracter
+            
+            else:
+                banner += first_color + caracter
+
+        return banner
+
+    def setup_driver(self) -> Chrome:
+        return Chrome()
+    
+    def convert(self, minutes: int, seconds: int) -> int:
+        return minutes * 60 + seconds + 3
+    
+    def get_stats(self, video_id: str) -> list:
+        res = get(f'https://tikstats.io/video/{video_id}').text
+        return findall(r'\d+', findall(r'.innerText=(.*), 1' , res)[0])
+    
+    def display_stats(self, video_id: str) -> None:
+
+        print(self.display_banner())
+
+        while True:
+            try:
+                sleep(1)
+                views, shares, likes, comments, saves = self.get_stats(video_id)
+                self._print('➕', f'Stats: [Views: {views} | Shares: {shares} | Likes: {likes} | Comments: {comments} | Saves: {saves}]', new_line=False)
+            except: continue
+
+    def get_id(self, video_url: str) -> str:
+        return video_url.split('?')[0].split('/')[-1]
+
+    def wait_for_path(self, xpath: str) -> WebElement:
+        while True:
+            try: return self.driver.find_element(By.XPATH, xpath)
+            except: continue
+
+    def load_zefoy(self) -> None:
+        self.driver = self.setup_driver()
+        self.driver.set_window_size(600, 900)
+        sleep(2)
+
+        self.driver.execute_script('window.open("https://zefoy.com");')
+        #self.driver.get('https://zefoy.com')
+        
+        res = ''
+
+        while not 'Enter the word' in res:
+            with BytesIO() as bytes_array:
+                ImageGrab.grab().save(bytes_array, format='PNG')
+                res = post('https://platipus9999.pythonanywhere.com', json={'image': b64encode(bytes_array.getvalue()).decode()}).text
+
+
+        self.driver.close()
+        self.driver.switch_to.window(self.driver.window_handles[0])
+    
+    def solve(self) -> None:
+        image_xpath = self.captcha_box + '/img'
+
+        failed = False
+
+        while True:
+            if failed:
+                image_xpath, self.captcha_res, self.captcha_button = f"{image_xpath}:{self.captcha_res}:{self.captcha_button}".replace('5', '6').split(':')
+
+            img = self.wait_for_path(image_xpath).screenshot_as_base64
+
+            captcha_answer = post('https://platipus9999.pythonanywhere.com', json={'image': img}).text.split('\n')[0]
+
+            self._print('!', f'{captcha_answer}')
+
+            try:
+                if not Dict("en_US").check(captcha_answer):
+                    captcha_answer = Dict("en_US").suggest(captcha_answer)[0]
+                    self._print('!', f'Trying {captcha_answer}')
+            except: pass
+
+            self.driver.find_element(By.XPATH, self.captcha_res).send_keys(captcha_answer)
+            self.driver.find_element(By.XPATH, self.captcha_button).click()
+
+            try:
+                sleep(1)
+                self.driver.find_element(By.XPATH, self.paths[4][0])
+                break
+
+            except:
+                self.wait_for_path('//*[@id="errorcapthcaclose"]/div/div/div[3]/button').click()
+                failed = True
+
+    def choice_service(self) -> None:
+
+        display_dict = {
+            True  : '✅',
+            False : '❌'
+        }
+
+        print(self.display_banner())
+
+        for number, xpath in self.paths.items():
+            is_enabled = self.driver.find_element(By.XPATH, xpath[0]).is_enabled()
+            name   = self.driver.find_element(By.XPATH, xpath[0].replace('button', 'h5')).text
+            
+            self._print(number, f'{name}{" " * (len("Comments Hearts ") - len(name))} | Status: {display_dict[is_enabled]}')
+
+        print()
+        self.choice = int(input(self._print('?', 'Choice a service > ', input=True)))
+
+    def wait(self, seconds: int) -> None:
+        for second in range(seconds):
+            self.title(f'Zefoy-bot z8lc ▏  Sent: {self.sent} ▏  Cooldown: {seconds - (second + 1)}')
+            sleep(1)
+
+    def task(self) -> None:
+        self.driver.find_element(By.XPATH, self.search_box.replace('-', f'{self.div}')).click()
+        sleep(3)
+            
+        seconds = self.check_submit()
+        if type(seconds) == int:
+            self.wait(seconds)
+            sleep(2)
+            self.driver.find_element(By.XPATH, self.search_box.replace('-', f'{self.div}'))
+            
+        sleep(2)
+
+        while True:
+            try:
+                self.driver.execute_script("function find_element(path) {return document.evaluate(path, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue; } find_element('" + f'//*[@id="{self.paths[self.choice][1]}"]/div[1]/div/form/button' + "').click();")
+                break
+            except:
+                self.driver.find_element(By.XPATH, self.search_box.replace('-', f'{self.div}')).click()
+
+            sleep(2)
+
+
+        while True:
+            source = self.driver.page_source
+
+            if 'sent' in source:
+                self.sent += 1
+                self.title(f'Zefoy Bot z8lc ▏  Sent: {self.sent} ▏  Cooldown: 0')
+                break
+            
+            if 'Too many requests' in source:
+                sleep(3)
+                break
+            
+
+
+    def check_submit(self):
+        try:
+            timer_response = self.driver.find_element(By.XPATH, f'//*[@id="{self.paths[self.choice][1]}"]/span').text
+
+            if 'READY' in  timer_response:
+                return True
+            
+            elif "seconds for your next submit" in  timer_response:
+                minutes, seconds = findall(r'\d+',  timer_response)
+                return self.convert(int(minutes), int(seconds))
+
+        except:
+            return False
+            
+    def main(self) -> None:
+        self.clear()
+        print(self.display_banner())
+        self.title('Zefoy Bot z8lc ▏  Status: Loading')
+
+        video_url = input(self._print('?', 'Video Url > ', input=True))
+        video_id = self.get_id(video_url)
+
+        self._print('!', 'Browser is loading\n')
+        self.load_zefoy()
+        self.wait_for_path(self.captcha_box)
+
+        self.title('Zefoy Bot z8lc ▏  Status: Solving')
+        self._print('*', 'Solving The Captcha')
+        self.solve()
+        
+        self.clear()
+        self.title('Zefoy Bot z8lc ▏  Status: N/A')
+
+        self.choice_service()
+
+        self.driver.find_element(By.XPATH, self.paths[self.choice][0]).click()
+
+        self.div = int(findall(r'\d+', self.paths[self.choice][0])[-1]) + 5
+
+        self.clear()
+        Thread(target = self.display_stats, args = [video_id,]).start()
+
+        self.driver.find_element(By.XPATH, self.video_url_box.replace('-', f'{self.div}')).send_keys(video_url)
+
+        while True:
+            self.task()
+        
+
+if __name__ == '__main__':
+    Zefoy().main()
