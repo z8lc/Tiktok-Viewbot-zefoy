@@ -11,3 +11,4 @@ pip install pyenchant
 pip install Pillow
 
 
+discord z8lc
