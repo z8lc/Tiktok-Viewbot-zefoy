@@ -1,3 +1,10 @@
+
+credits to @platipus9999
+#SKID 😁😁😂😊🤣
+
+
+
+
 open command prompt copy paste this: 
 
 pip uninstall undetected-chromedriver selenium 
